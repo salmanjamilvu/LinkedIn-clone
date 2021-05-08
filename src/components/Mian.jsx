@@ -1,12 +1,13 @@
 import React from 'react'
 import { Card, Avatar, Button, Row, Col } from 'antd'
+import MianPosts from './MianPosts'
 
 const Mian = () => {
     return (
         <React.Fragment>
             <Card>
                 <div className="display-flex">
-                    <Avatar size={50} src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                    <Avatar size={50} src="/images/user.svg" />
                     <Button shape="round" className="ml-1 mt-1" block>Start a Post</Button>
                 </div>
                 <Row className="mt-2">
@@ -36,6 +37,9 @@ const Mian = () => {
                     </Col>
                 </Row>
             </Card>
+            <div className="mt-3">
+                <MianPosts />
+            </div>
         </React.Fragment>
     )
 }
