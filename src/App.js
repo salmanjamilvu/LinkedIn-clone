@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Login from './components/Login'
-import Home from './components/Home'
-import H_Header from './components/H_Header'
+import Login from './Container/loginContainer'
+import Home from './Container/homeContainer'
+import H_Header from './Container/headerContainer'
 
-function App() {
+function App(props) {
+
+  useEffect(() => {
+    console.log(props.getUserAuth())
+  }, [])
+
   return (
     <div className="App">
       <Router>
@@ -13,7 +18,7 @@ function App() {
             <Login/>
           </Route>
           <Route exact path='/home' >
-            <H_Header/>
+            <H_Header />
             <Home />
           </Route>
         </Switch>

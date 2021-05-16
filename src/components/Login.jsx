@@ -1,10 +1,13 @@
 import React from 'react'
 import { Row, Col, Button, Typography } from 'antd'
+import {Redirect} from 'react-router'
 
 const { Title } = Typography
-const Login = () => {
+const Login = (props) => {
+    const { signinHandle, User } = props
     return (
         <div className="container">
+            {User && <Redirect to='/home' />}
             <Row>
                 <Col span={12}>
                     <a href="/">
@@ -22,7 +25,7 @@ const Login = () => {
                 <Row gutter={24}>
                     <Col span={12} md={12} sm={24} xs={24}>
                         <Title className="ss_heading">Welcome to your professional community</Title>
-                        <Button> <img src="/images/google.svg" alt="google" /> Singin with Google </Button>
+                        <Button onClick={()=> signinHandle()}> <img src="/images/google.svg" alt="google" /> Singin with Google </Button>
                     </Col>
                     <Col span={12} md={12} sm={24} xs={24} className="hero_col_2">
                         <img src="/images/login-hero.svg" alt="hero" width="100%" />

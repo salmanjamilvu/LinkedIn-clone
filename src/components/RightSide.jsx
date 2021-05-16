@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Typography, Avatar, Button, Affix } from 'antd'
+import { Card, Typography, Avatar, Button } from 'antd'
 
 const { Title, Link } = Typography
 const { Meta } = Card
@@ -32,9 +32,7 @@ const RightSide = () => {
                     <img className="ml-1" src="images/right-icon.svg" alt='right' />
                 </div>
             </Card>
-            <Affix>
-                <Card className="mt-3" cover={<img alt="example" src="/images/job.jpg" />} />
-            </Affix>
+            <img className="mt-3" alt="example" src="/images/job.jpg" width="100%" />
         </React.Fragment>
     )
 }

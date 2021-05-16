@@ -2,6 +2,24 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc; 
+}
 #root,
 html,
 body{
@@ -27,14 +45,20 @@ body{
 .ml-1{
   margin-left: 10px;
 }
+.ml-2{
+  margin-left: 20px;
+}
 .ml-3{
   margin-left: 30px;
+}
+.ml-4{
+  margin-left: 40px;
 }
 .ml-auto{
   margin-left: auto;
 }
 .mt{
-  margin-top: 70px;
+  margin-top: 40px;
 }
 .mt-1{
   margin-top: 10px;
@@ -49,6 +73,9 @@ body{
 
 .float-right{
   float: right;
+}
+.float-left{
+  float: left;
 }
 .container{
   padding: 10px 60px;
@@ -94,6 +121,9 @@ body{
   background-color: transparent !important;
   border-bottom: none !important;
 }
+.bg-white{
+  background-color: #fff;
+}
 .search_bar{
   width: 50% !important;
   padding: 5px;
@@ -103,6 +133,19 @@ body{
 .photo-upload{
   background-color: #fff;
   margin-top: -80px;
+}
+/*POST MODEL*/
+.model{
+  height: 250px;
+  overflow: auto;
+}
+.model-icon{
+  font-size: 1.6em;
+  cursor: pointer;
+}
+.ant-upload-list{
+  margin-top: -35px;
+    margin-right: 25px;
 }
 @media (max-width: 767px){
   .container{

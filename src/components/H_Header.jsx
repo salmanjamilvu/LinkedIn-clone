@@ -1,10 +1,14 @@
 import React from 'react'
-import { Row, Col, Menu, Input } from 'antd'
-import { SearchOutlined, HomeFilled, ShoppingFilled, ProfileFilled, MessageFilled, BellFilled } from '@ant-design/icons'
+import {Redirect} from 'react-router'
+import { Row, Col, Menu, Input, Avatar } from 'antd'
+import { SearchOutlined, HomeFilled, ShoppingFilled, ProfileFilled, CodepenOutlined } from '@ant-design/icons'
 
-const H_Header = () => {
+const { SubMenu } = Menu
+const H_Header = (props) => {
+    const {User, signOutAPI} = props
     return (
-        <div className="container pt-0">
+        <div className="container bg-white">
+            {!User && <Redirect to='/' />}
             <Row gutter={24}>
                 <Col span={12} md={12}>
                     <a href="/home">
@@ -27,15 +31,11 @@ const H_Header = () => {
                             <ShoppingFilled />
                             <span>Jobs</span>
                         </Menu.Item>
-                        <Menu.Item key="14">
-                            <MessageFilled />
-                            <span>Messaging</span>
-                        </Menu.Item>
-                        <Menu.Item key="15">
-                            <BellFilled />
-                            <span>Notification</span>
-                        </Menu.Item>    
-    
+                        <SubMenu key="SubMenu" title={<><Avatar size={40} src={User && User.photoURL} /> <span> {User && User.displayName} </span> </> }>
+                            <Menu.Item key="Logout" onClick={()=>signOutAPI()}>
+                                <span>Logout</span>
+                            </Menu.Item>
+                        </SubMenu>   
                     </Menu>
                 </Col>
             </Row>  
